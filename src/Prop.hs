@@ -22,9 +22,9 @@ type Estado = [String]
 -- cadena que represente las formulas proposicionales en notacion infija.
 -- ------------------------------------------------------------------------------
 
-instance Show Prop where --    ( p <-> ( ¬q /\ T ) )
+instance Show Prop where
     show :: Prop -> String
-    show (Var p) = p ----------------------------------------------Falta recuperar el string
+    show (Var p) = p
     show T = " T "
     show F = " F "
     show (Neg prop) ="¬" ++ show prop
@@ -50,7 +50,7 @@ conjPotencia (x:xs) = [x:ys | ys<-aux] ++ aux
 -- ------------------------------------------------------------------------------
 
 vars :: Prop -> [String]
-vars (Var p) = [p] ----------------------------------------------Falta recuperar el string
+vars (Var p) = [p]
 vars T = []
 vars F = []
 vars (Neg prop) = vars prop
